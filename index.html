@@ -14,21 +14,22 @@
             text-align: center;
         }
         header {
-            background-color: #6b8e23; /* Sage Forest Green */
+            background-color: #d8f3dc; /* Light Pastel Sage Green */
             padding: 20px;
             font-size: 2em;
             font-weight: bold;
             color: #3a3a3a;
             border-bottom: 5px solid #87aebf; /* Light Blue */
         }
-        /* Added multiple lines beneath title with Pink and Blue */
+        /* Added full width lines beneath title with Pink and Blue */
         .title-lines {
+            width: 100%; /* Full page width */
             display: flex;
             justify-content: center;
             margin-top: 10px;
         }
         .line {
-            width: 100px; /* Full lines */
+            width: 100%; /* Full lines across the entire page */
             height: 5px;
         }
         .line.pink {
@@ -46,7 +47,7 @@
             font-size: 1.2em;
             margin: 0 15px;
             padding: 10px;
-            background-color: #6b8e23; /* Sage Forest Green */
+            background-color: #d8f3dc; /* Light Pastel Sage Green */
             border-radius: 15px;
         }
         nav a:hover {
@@ -78,7 +79,7 @@
 </head>
 <body>
     <header>Untamed Kat</header>
-    <!-- Title lines below the header -->
+    <!-- Title lines beneath the header -->
     <div class="title-lines">
         <div class="line pink"></div>
     </div>
