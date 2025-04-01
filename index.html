@@ -14,12 +14,19 @@
             text-align: center;
         }
         header {
-            background: linear-gradient(135deg, #ffc0cb, #b2d8d8, #d8f3dc, #c1e1c1); /* Light Pink, Pastel Blue, Soft Green */
+            background-color: #d8f3dc; /* Sage Green */
             padding: 20px;
             font-size: 2em;
             font-weight: bold;
             color: #3a3a3a;
             border-bottom: 5px solid #87aebf;
+        }
+        header::after {
+            content: "";
+            display: block;
+            margin-top: 10px;
+            height: 5px;
+            background: linear-gradient(135deg, #ffc0cb, #b2d8d8, #ffc0cb, #d8f3dc);
         }
         nav {
             margin: 20px 0;
