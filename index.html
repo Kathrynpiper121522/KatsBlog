@@ -14,19 +14,28 @@
             text-align: center;
         }
         header {
-            background-color: #d8f3dc; /* Sage Green */
+            background-color: #6b8e23; /* Sage Forest Green */
             padding: 20px;
             font-size: 2em;
             font-weight: bold;
             color: #3a3a3a;
-            border-bottom: 5px solid #87aebf;
+            border-bottom: 5px solid #87aebf; /* Light Blue */
         }
-        header::after {
-            content: "";
-            display: block;
+        /* Added multiple lines beneath title with Pink and Blue */
+        .title-lines {
+            display: flex;
+            justify-content: center;
             margin-top: 10px;
+        }
+        .line {
+            width: 100px; /* Full lines */
             height: 5px;
-            background: linear-gradient(135deg, #ffc0cb, #b2d8d8, #ffc0cb, #d8f3dc);
+        }
+        .line.pink {
+            background-color: #ffc0cb; /* Light Pink */
+        }
+        .line.blue {
+            background-color: #b2d8d8; /* Pastel Blue */
         }
         nav {
             margin: 20px 0;
@@ -37,7 +46,7 @@
             font-size: 1.2em;
             margin: 0 15px;
             padding: 10px;
-            background-color: #c1e1c1; /* Sage Green */
+            background-color: #6b8e23; /* Sage Forest Green */
             border-radius: 15px;
         }
         nav a:hover {
@@ -69,6 +78,16 @@
 </head>
 <body>
     <header>Untamed Kat</header>
+    <!-- Title lines below the header -->
+    <div class="title-lines">
+        <div class="line pink"></div>
+    </div>
+    <div class="title-lines">
+        <div class="line blue"></div>
+    </div>
+    <div class="title-lines">
+        <div class="line pink"></div>
+    </div>
     <nav>
         <a href="#poems">Poems</a>
         <a href="#short-stories">Short Stories</a>
@@ -115,4 +134,5 @@
     </div>
 </body>
 </html>
+
 
