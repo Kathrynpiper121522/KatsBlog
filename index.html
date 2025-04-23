@@ -1,268 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untamed Kat</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f5f5dc; /* Cream */
-            color: #5a5a5a;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #4a6529; /* Updated Green */
-            padding: 20px;
-            font-size: 2em;
-            font-weight: bold;
-            color: #f5f5dc; /* Cream text */
-            border-bottom: 5px solid #87aebf; /* Light Blue */
-        }
-        .title-lines {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .line {
-            width: 100%;
-            height: 5px;
-        }
-        .line.pink {
-            background-color: #ffc0cb;
-        }
-        .line.blue {
-            background-color: #b2d8d8;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            text-decoration: none;
-            color: #f5f5dc;
-            font-size: 1.2em;
-            margin: 0 15px;
-            padding: 10px;
-            background-color: #4a6529;
-            border-radius: 15px;
-        }
-        nav a:hover {
-            background-color: #b2d8d8;
-        }
-        .content {
-            padding: 30px;
-        }
-        .poem {
-            font-style: italic;
-            color: #3a3a3a;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #b2d8d8;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .poem-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #3a3a3a;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 2em;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untamed Kat</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f5f5dc;
+      color: #5a5a5a;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4a6529;
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+      color: #f5f5dc;
+      border-bottom: 5px solid #87aebf;
+    }
+
+    .title-lines {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .line {
+      width: 100%;
+      height: 5px;
+    }
+
+    .line.pink {
+      background-color: #ffc0cb;
+    }
+
+    .line.blue {
+      background-color: #b2d8d8;
+    }
+
+    nav {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav a, .dropdown-btn {
+      text-decoration: none;
+      color: #f5f5dc;
+      font-size: 1.2em;
+      margin: 0 10px;
+      padding: 10px;
+      background-color: #4a6529;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    nav a:hover, .dropdown-content a:hover, .dropdown-btn:hover {
+      background-color: #b2d8d8;
+      color: #4a6529;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #4a6529;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+    .dropdown-content a {
+      color: #f5f5dc;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .poem {
+      font-style: italic;
+      color: #3a3a3a;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #b2d8d8;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .poem-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #3a3a3a;
+      margin-bottom: 20px;
+      font-style: normal;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    em {
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-    <header>Untamed Kat</header>
-    <div class="title-lines">
-        <div class="line pink"></div>
+  <header>Untamed Kat</header>
+  <div class="title-lines">
+    <div class="line pink"></div>
+  </div>
+  <div class="title-lines">
+    <div class="line blue"></div>
+  </div>
+  <div class="title-lines">
+    <div class="line pink"></div>
+  </div>
+
+  <nav>
+    <div class="dropdown">
+      <div class="dropdown-btn">Poems</div>
+      <div class="dropdown-content">
+        <a href="#boredom">Boredom</a>
+        <a href="#petals-static">Petals & Static</a>
+        <a href="#barefoot">Barefoot</a>
+      </div>
     </div>
-    <div class="title-lines">
-        <div class="line blue"></div>
-    </div>
-    <div class="title-lines">
-        <div class="line pink"></div>
-    </div>
-    <nav>
-        <a href="#poems">Poems</a>
-        <a href="#short-stories">Short Stories</a>
-        <a href="#visual-art">Visual Art</a>
-        <a href="#good-eats">Good Eats</a>
-    </nav>
-    <div class="content">
-        <section id="poems">
-            <h2>Poems</h2>
-            <div class="poem">
-                <div class="poem-title">Boredom</div>
-                <p>Do you remember when you could create a world,<br>
-                Where no one could enter, your secrets unfurled?<br>
-                Do you remember when silence alone<br>
-                Filled the mind with ideas, a laughter well-known,<br>
-                That laughter, so pure, one of a kind,<br>
-                Echoing softly in the heart and the mind.<br>
-                Oh, I reminisce on the days forever missed,<br>
-                When boredom had no place, it didn't exist.<br>
-                My mind, so endless, soared high above,<br>
-                Imagination took the crown, and kingdoms were loved.<br>
-                Oh, how I reminisce on those days,<br>
-                Where every thought would set fire to the maze.<br>
-                Do you remember when you could relieve that feeling?<br>
-                The feeling of nothing to do, so appealing.<br>
-                Do you remember when all that it took<br>
-                Was a mystery to solve, a forgotten book?<br>
-                But now, it feels like I'm missing the clue,<br>
-                The magic of moments that once came through.</p>
-            </div>
-            <div class="poem">
-                <div class="poem-title">Petals & Static</div>
-                <p>everything I know about love,<br>
-                full of untold secrets.<br>
-                bell jar, unraveled-<br>
-                a woman’s mind, her rationale.<br>
-                bunny, I love you,<br>
-                bunny, you’re sooo cute.<br>
-                a woman’s world.<br>
-                holding the intrinsic lust of intellect.<br>
-                in a woman’s world they are fierce-<br>
-                with metallic spikes<br>
-                and bubblegum bows.<br>
-                a singular petal drifting,<br>
-                its beauty known<br>
-                through every sense.<br>
-                for she is the one<br>
-                who dances in the wind.<br>
-                a woman’s world.<br>
-                like novels you fall inside,<br>
-                where soul and story intertwine.<br>
-                orchids bloom again and again-<br>
-                so too shall she cradle you,<br>
-                year after year.<br>
-                a woman’s world:<br>
-                soft but hard.<br>
-                for softness is truth,<br>
-                and strength wears a gloss.<br>
-                synesthesia surging,<br>
-                it’s just as they are:<br>
-                feeling, seeing,<br>
-                living through scars.<br>
-                we giggle, we gossip,<br>
-                we carry the unseen-<br>
-                something sacred,<br>
-                something vital,<br>
-                something bright beneath the lace.<br>
-                not built to be understood,<br>
-                only to endure in elegance.<br>
-                in a woman’s world<br>
-                we flow with the tides,<br>
-                we sync with the moon,<br>
-                we are our own brides.<br>
-                a sacred bond with one another-<br>
-                language passed in glances,<br>
-                half-remembered lullabies.<br>
-                mirror-slick and ever-shifting,<br>
-                like silk over bone.<br>
-                she is not yours to know,<br>
-                only to notice<br>
-                in the hush between moments,<br>
-                in the static<br>
-                before the song plays.</p>
-            </div>
-            <div class="poem">
-                <div class="poem-title">Barefoot</div>
-                <p>The grass cools against my soles<br>
-                as I step past the warning of my mother’s voice,<br>
-                the one that says, Don’t go barefoot,<br>
-                but I do anyway-<br>
-                the blades tickling my arches,<br>
-                each step an act of rebellion,<br>
-                soft underfoot until the earth begins to hum,<br>
-                and the cicadas join in,<br>
-                their song rising like a heat wave,<br>
-                filling the evening with a pulse,<br>
-                thrum, thrum, thrum.<br>
-                The sky is a velvet stage for fireworks,<br>
-                the air heavy with salt and smoke.<br>
-                We run-<br>
-                feet slapping,<br>
-                bare against the grass,<br>
-                heartbeats matching the bursts above.<br>
-                I feel the burn in my legs,<br>
-                the ache of freedom,<br>
-                then-<br>
-                Ouch!<br>
-                A rock underfoot, sharp and unforgiving,<br>
-                but I climb anyway-<br>
-                how could I resist?<br>
-                The tide pools,<br>
-                those little worlds trapped in time,<br>
-                they whisper secrets-<br>
-                look here,<br>
-                find a treasure,<br>
-                so I become the detective.<br>
-                The beach tugs at me like a magnet,<br>
-                sand slipping between my toes,<br>
-                hotter than I imagined,<br>
-                but I don’t care-<br>
-                I’m too busy<br>
-                watching the ocean swallow the sun,<br>
-                my feet sinking deeper into the earth,<br>
-                chasing the sound of the ice cream truck.<br>
-                The bell rings in the distance,<br>
-                sweet and familiar,<br>
-                a tune that means more than just sugar-<br>
-                it means everything.<br>
-                I bite off the layer of chocolate crunch,<br>
-                cracking it with my teeth<br>
-                before licking the ice cream,<br>
-                cool and sweet,<br>
-                melting faster than I can catch it.<br>
-                I hear the crickets now,<br>
-                their chorus a lullaby for the end of the day,<br>
-                and then-<br>
-                the fireflies.<br>
-                Tiny stars flicker in the dark,<br>
-                catching my breath<br>
-                like something forgotten-<br>
-                when was the last time<br>
-                I saw a firefly?<br>
-                The salty water clings to my skin,<br>
-                the sun already starting to evaporate<br>
-                my wet body,<br>
-                leaving me sticky<br>
-                as the sand coats me,<br>
-                a second skin I can’t shake.<br>
-                My mother’s voice again,<br>
-                this time more gentle-<br>
-                a rinse,<br>
-                a shower,<br>
-                a quick scrub before the ride home.<br>
-                But I am still barefoot in my story,<br>
-                the world still alive beneath my feet-<br>
-                no matter how much they tell me to put shoes on,<br>
-                Barefoot, I keep summer in my body-<br>
-                its grit in my skin,<br>
-                its sugar on my tongue,<br>
-                and sometimes, when the world goes quiet,<br>
-                I can still hear it humming underfoot.</p>
-            </div>
-        </section>
-        <section id="short-stories">
-            <h2>Short Stories</h2>
-            <p>Beautifully crafted stories to captivate your readers.</p>
-        </section>
-        <section id="visual-art">
-            <h2>Visual Art</h2>
-            <p>Display your lovely artistic creations.</p>
-        </section>
-        <section id="good-eats">
-            <h2>Good Eats</h2>
-            <p>Delicious recipes to share and enjoy.</p>
-        </section>
-    </div>
+    <a href="#short-stories">Short Stories</a>
+    <a href="#visual-art">Visual Art</a>
+    <a href="#good-eats">Good Eats</a>
+  </nav>
+
+  <div class="content">
+    <section id="poems">
+      <h2>Poems</h2>
+
+      <div class="poem" id="boredom">
+        <div class="poem-title">Boredom</div>
+        <p>Do you remember when you could create a world,<br>
+        Where no one could enter, your secrets unfurled?<br>
+        Do you remember when silence alone<br>
+        Filled the mind with ideas, a laughter well-known,<br>
+        That laughter, so pure, one of a kind,<br>
+        Echoing softly in the heart and the mind.<br>
+        Oh, I reminisce on the days forever missed,<br>
+        When boredom had no place, it didn't exist.<br>
+        My mind, so endless, soared high above,<br>
+        Imagination took the crown, and kingdoms were loved.<br>
+        Oh, how I reminisce on those days,<br>
+        Where every thought would set fire to the maze.<br>
+        Do you remember when you could relieve that feeling?<br>
+        The feeling of nothing to do, so appealing.<br>
+        Do you remember when all that it took<br>
+        Was a mystery to solve, a forgotten book?<br>
+        But now, it feels like I'm missing the clue,<br>
+        The magic of moments that once came through.</p>
+      </div>
+
+      <div class="poem" id="petals-static">
+        <div class="poem-title">Petals & Static</div>
+        <p>everything I know about love,<br>
+        full of untold secrets.<br>
+        bell jar, unraveled—<br>
+        a woman’s mind, her rationale.<br>
+        <em>bunny, I love you,<br>
+        bunny, you’re sooo cute.</em><br>
+        a woman’s world.<br>
+        holding the intrinsic lust of intellect.<br>
+        in a woman’s world they are fierce—<br>
+        with metallic spikes<br>
+        and bubblegum bows.<br>
+        a singular petal drifting,<br>
+        its beauty known<br>
+        through every sense.<br>
+        for she is the one<br>
+        who dances in the wind.<br>
+        a woman’s world.<br>
+        like novels you fall inside,<br>
+        where soul and story intertwine.<br>
+        orchids bloom again and again—<br>
+        so too shall she cradle you,<br>
+        year after year.<br>
+        a woman’s world:<br>
+        soft but hard.<br>
+        for softness is truth,<br>
+        and strength wears a gloss.<br>
+        synesthesia surging,<br>
+        it’s just as they are:<br>
+        feeling, seeing,<br>
+        living through scars.<br>
+        we giggle, we gossip,<br>
+        we carry the unseen—<br>
+        something sacred,<br>
+        something vital,<br>
+        something bright beneath the lace.<br>
+        not built to be understood,<br>
+        only to endure in elegance.<br>
+        in a woman’s world<br>
+        we flow with the tides,<br>
+        we sync with the moon,<br>
+        we are our own brides.<br>
+        a sacred bond with one another—<br>
+        language passed in glances,<br>
+        half-remembered lullabies.<br>
+        mirror-slick and ever-shifting,<br>
+        like silk over bone.<br>
+        she is not yours to know,<br>
+        only to notice<br>
+        in the hush between moments,<br>
+        in the static<br>
+        before the song plays.</p>
+      </div>
+
+      <div class="poem" id="barefoot">
+        <div class="poem-title">Barefoot</div>
+        <p>The grass cools against my soles<br>
+        as I step past the warning of my mother’s voice,<br>
+        the one that says, <em>Don’t go barefoot,</em><br>
+        but I do anyway—<br>
+        the blades tickling my arches,<br>
+        each step an act of rebellion,<br>
+        soft underfoot until the earth begins to hum,<br>
+        and the cicadas join in,<br>
+        their song rising like a heat wave,<br>
+        filling the evening with a pulse,<br>
+        thrum, thrum, thrum.<br>
+        The sky is a velvet stage for fireworks,<br>
+        the air heavy with salt and smoke.<br>
+        We run—<br>
+        feet slapping,<br>
+        bare against the grass,<br>
+        heartbeats matching the bursts above.<br>
+        I feel the burn in my legs,<br>
+        the ache of freedom,<br>
+        then—<br>
+        Ouch!<br>
+        A rock underfoot, sharp and unforgiving,<br>
+        but I climb anyway—<br>
+        how could I resist?<br>
+        The tide pools,<br>
+        those little worlds trapped in time,<br>
+        they whisper secrets—<br>
+        <em>look here,<br>
+        find a treasure,</em><br>
+        so I become the detective.<br>
+        The beach tugs at me like a magnet,<br>
+        sand slipping between my toes,<br>
+        hotter than I imagined,<br>
+        but I don’t care—<br>
+        I’m too busy<br>
+        watching the ocean swallow the sun,<br>
+        my feet sinking deeper into the earth,<br>
+        chasing the sound of the ice cream truck.<br>
+        The bell rings in the distance,<br>
+        sweet and familiar,<br>
+        a tune that means more than just sugar—<br>
+        it means everything.<br>
+        I bite off the layer of chocolate crunch,<br>
+        cracking it with my teeth<br>
+        before licking the ice cream,<br>
+        cool and sweet,<br>
+        melting faster than I can catch it.<br>
+        I hear the crickets now,<br>
+        their chorus a lullaby for the end of the day,<br>
+        and then—<br>
+        the fireflies.<br>
+        Tiny stars flicker in the dark,<br>
+        catching my breath<br>
+        like something forgotten—<br>
+        when was the last time<br>
+        I saw a firefly?<br>
+        The salty water clings to my skin,<br>
+        the sun already starting to evaporate<br>
+        my wet body,<br>
+        leaving me sticky<br>
+        as the sand coats me,<br>
+        a second skin I can’t shake.<br>
+        My mother’s voice again,<br>
+        this time more gentle—<br>
+        a rinse,<br>
+        a shower,<br>
+        a quick scrub before the ride home.<br>
+        But I am still barefoot in my story,<br>
+        the world still alive beneath my feet—<br>
+        no matter how much they tell me to put shoes on,<br>
+        Barefoot, I keep summer in my body—<br>
+        its grit in my skin,<br>
+        its sugar on my tongue,<br>
+        and sometimes, when the world goes quiet,<br>
+        I can still hear it humming underfoot.</p>
+      </div>
+    </section>
+
+    <section id="short-stories">
+      <h2>Short Stories</h2>
+      <p>Beautifully crafted stories to captivate your readers.</p>
+    </section>
+
+    <section id="visual-art">
+      <h2>Visual Art</h2>
+      <p>Display your lovely artistic creations.</p>
+    </section>
+
+    <section id="good-eats">
+      <h2>Good Eats</h2>
+      <p>Delicious recipes to share and enjoy.</p>
+    </section>
+  </div>
 </body>
 </html>
-
